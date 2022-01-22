@@ -1,6 +1,9 @@
 package com.example.demogradle.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
@@ -12,6 +15,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
+@Builder
+
 public class Department {
 
     @Id
@@ -20,7 +25,6 @@ public class Department {
     private Long departmentId;
 
     //Validations are added
-    @JsonIgnore
     @NotBlank(message = "Please Add Department Name")
     @NotNull
     @Length(max=5,min=1)
@@ -28,7 +32,6 @@ public class Department {
     private String departmentName;
 
     //Validations are added
-    @JsonIgnore
     @NotBlank(message = "Please Add Address")
     @NotNull
     @Length(max=50,min=1)
@@ -36,7 +39,6 @@ public class Department {
     private String departmentAddress;
 
     //Validations are added
-    @JsonIgnore
     @NotBlank(message = "Please Add Department Code")
     @NotNull
     @Length(max=5,min=1)
@@ -74,19 +76,6 @@ public class Department {
 
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
-    }
-
-    //Create Constructor for the fields
-    public Department(Long departmentId, String departmentName, String departmentAddress, String departmentCode) {
-        this.departmentId = departmentId;
-        this.departmentName = departmentName;
-        this.departmentAddress = departmentAddress;
-        this.departmentCode = departmentCode;
-    }
-
-    //Default Constructor
-    public Department(){
-
     }
 
     //Create toString method for all the fields
