@@ -1,6 +1,7 @@
 package com.example.demogradle.controller;
 
 import com.example.demogradle.entity.Department;
+import com.example.demogradle.error.DepartmentNotFoundException;
 import com.example.demogradle.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,10 +40,10 @@ public class DepartmentController {
     }
     //Retrieve Department By Id
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         LOGGER.info("Inside fetchDepartmentById of DepartmentController");
-        LOGGER.trace("You're now in Inside fetchDepartmentById of DepartmentController");
-        LOGGER.error("Something is wrong Inside fetchDepartmentList of DepartmenteControllr");
+//        LOGGER.trace("You're now in Inside fetchDepartmentById of DepartmentController");
+//        LOGGER.error("Something is wrong Inside fetchDepartmentList of DepartmenteControllr");
         return departmentService.fetchDepartmentById(departmentId);
     }
     //Deleting Department
