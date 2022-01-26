@@ -51,6 +51,8 @@ dependencies {
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.1.0'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+
+
 }
 
 test {
