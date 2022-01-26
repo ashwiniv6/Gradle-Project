@@ -39,7 +39,7 @@ class DepartmentServiceTest {
     }
 
     @Test
-    @DisplayName("Get Data based on Valida Department Name")
+    @DisplayName("Get Data based on Valid Department Name")
     public void whenValidDepartmentName_thenDepartmentShouldFound() {
         String departmentName = "IT";
         Department found =
