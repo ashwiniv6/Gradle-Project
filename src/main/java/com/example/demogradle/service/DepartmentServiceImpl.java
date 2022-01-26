@@ -71,4 +71,6 @@ public class DepartmentServiceImpl implements DepartmentService{
         return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
     }
 
+
+
 }

@@ -1,20 +1,25 @@
 package com.example.demogradle.service;
 
+
 import com.example.demogradle.entity.Department;
 import com.example.demogradle.error.DepartmentNotFoundException;
 
 import java.util.List;
 
 public interface DepartmentService {
-   public  Department saveDepartment(Department department);
 
-   public List<Department> fetchDepartmentList();
+    Department saveDepartment(Department department);
 
-    public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
+    List<Department> fetchDepartmentList();
 
-   public  void deleteDepartmentById(Long departmentId);
+    Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException;
 
-   public Department updateDepartment(Long departmentId, Department department);
+    void deleteDepartmentById(Long departmentId);
 
-    public Department fetchDepartmentByName(String departmentName);
+    Department updateDepartment(Long departmentId, Department department);
+
+    Department fetchDepartmentByName(String departmentName);
+
+
+
 }
