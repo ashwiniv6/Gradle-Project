@@ -6,11 +6,12 @@ import com.example.demogradle.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
+@Controller
 @RestController
 public class DepartmentController {
 
@@ -20,6 +21,8 @@ public class DepartmentController {
 
     //Adding Loggers with slf4j
     private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
+    private Object DepartmentDto;
+
 
     //Creating Database
     @PostMapping("/departments")
@@ -29,6 +32,7 @@ public class DepartmentController {
         LOGGER.error("Something is wrong Inside saveDepartment of DepartmentController");
         return departmentService.saveDepartment(department);
     }
+
 
     //Retrieve all the department List
     @GetMapping("/departments")
@@ -55,7 +59,7 @@ public class DepartmentController {
         departmentService.deleteDepartmentById(departmentId);
         return "Department Deleted Successfully.";
     }
-
+    //Updating Department Contents by Id
     @PutMapping("/departments/{id}")
     public Department updateDepartment(@PathVariable("id") Long departmentId,@RequestBody Department department)
     {
@@ -73,4 +77,7 @@ public class DepartmentController {
         LOGGER.error("Something is wrong Inside fetchDepartmentByName of DepartmenteControllr");
         return  departmentService.fetchDepartmentByName(departmentName);
     }
+
+
+
 }
