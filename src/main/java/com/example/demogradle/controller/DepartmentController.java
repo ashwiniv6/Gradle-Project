@@ -29,7 +29,6 @@ public class DepartmentController {
     public Department saveDepartment(@Valid @RequestBody Department department){
         LOGGER.info("Inside SaveDepartment of DepartmentController");
         LOGGER.trace("You're now in Inside fetchDepartmentById of DepartmentController");
-        LOGGER.error("Something is wrong Inside saveDepartment of DepartmentController");
         return departmentService.saveDepartment(department);
     }
 
@@ -39,15 +38,12 @@ public class DepartmentController {
     public List<Department> fetchDepartmentList(){
         LOGGER.info("Inside fetchDepartmentList of DepartmentController");
         LOGGER.trace("You're now in Inside fetchDepartmentById of DepartmentController");
-        LOGGER.error("Something is wrong Inside fetchDepartmentList of DepartmenteControllr");
         return departmentService.fetchDepartmentList();
     }
     //Retrieve Department By Id
     @GetMapping("/departments/{id}")
     public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         LOGGER.info("Inside fetchDepartmentById of DepartmentController");
-//        LOGGER.trace("You're now in Inside fetchDepartmentById of DepartmentController");
-//        LOGGER.error("Something is wrong Inside fetchDepartmentList of DepartmenteControllr");
         return departmentService.fetchDepartmentById(departmentId);
     }
     //Deleting Department
@@ -55,7 +51,6 @@ public class DepartmentController {
     public String deleteDepartmentById(@PathVariable("id") Long departmentId){
         LOGGER.info("Inside deleteDepartmentById of DepartmentController");
         LOGGER.trace("You're now in Inside deleteDepartmentById of DepartmentController");
-        LOGGER.error("Something is wrong Inside deleteDepartmentById of DepartmenteControllr");
         departmentService.deleteDepartmentById(departmentId);
         return "Department Deleted Successfully.";
     }
@@ -65,7 +60,6 @@ public class DepartmentController {
     {
         LOGGER.info("Inside updateDepartment of DepartmentController");
         LOGGER.trace("You're now in Inside updateDepartment of DepartmentController");
-        LOGGER.error("Something is wrong Inside updateDepartment of DepartmenteControllr");
         return departmentService.updateDepartment(departmentId,department);
     }
 
@@ -74,7 +68,6 @@ public class DepartmentController {
     public Department fetchDepartmentByName(@PathVariable("name") String departmentName){
         LOGGER.info("Inside fetchDepartmentByName of DepartmentController");
         LOGGER.trace("You're now in Inside fetchDepartmentByName of DepartmentController");
-        LOGGER.error("Something is wrong Inside fetchDepartmentByName of DepartmenteControllr");
         return  departmentService.fetchDepartmentByName(departmentName);
     }
 
